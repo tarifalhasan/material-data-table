@@ -9,7 +9,7 @@ import DraftsIcon from '@mui/icons-material/Drafts';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 const Footer = () => {
   return (
-    <div className="absolute w-full px-5">
+    <div className=" w-full px-5">
       <footer className="flex justify-between">
         <Stack spacing={1} direction="row">
           <IconButton

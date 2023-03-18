@@ -6,7 +6,6 @@ import ContactsOutlinedIcon from '@mui/icons-material/ContactsOutlined';
 import ReceiptOutlinedIcon from '@mui/icons-material/ReceiptOutlined';
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
-import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 
 function SIdebar() {
   const { collapseSidebar } = useProSidebar();
@@ -19,6 +18,7 @@ function SIdebar() {
 
   return (
     <div
+      className=""
       id="sidebar"
       style={{ height: '100vh', display: 'flex', maxWidth: '72px' }}
     >

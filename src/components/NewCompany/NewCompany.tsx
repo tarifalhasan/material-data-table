@@ -8,6 +8,7 @@ import TabPanel from '@mui/lab/TabPanel';
 import BasicInfo from './BasicInfo';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import ContactPerson from './ContactPerson';
 export default function NewCompany() {
   const [value, setValue] = React.useState('1');
 
@@ -40,7 +41,9 @@ export default function NewCompany() {
         <TabPanel value="1">
           <BasicInfo />
         </TabPanel>
-        <TabPanel value="2">Item Two</TabPanel>
+        <TabPanel value="2">
+          <ContactPerson />
+        </TabPanel>
       </TabContext>
     </Box>
   );

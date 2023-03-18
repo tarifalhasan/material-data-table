@@ -59,15 +59,7 @@ function Row(props: { row: ReturnType<typeof createData> }) {
 }
 
 const rows = [
-  createData(
-    'Tarif AL Hasan',
-    'CEO',
-    'Tarif Tech ',
-    24,
-    '24/12/2020',
-    32,
-    2299
-  ),
+  createData('Tarif AL Hasan', 'CEO', 'Tarif Tech ', 24, '24/12/2020', 322299),
   createData('Omor', 'MD', 'Tarif Tech ', 24, '24/12/2020', 4499),
 ];
 

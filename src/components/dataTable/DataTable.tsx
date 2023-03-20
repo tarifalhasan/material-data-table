@@ -65,7 +65,7 @@ const rows = [
 
 export default function DataTable() {
   return (
-    <Box>
+    <Box className="w-full">
       <DataTableHeader />
       <TableContainer component={Paper}>
         <Table aria-label="collapsible table">

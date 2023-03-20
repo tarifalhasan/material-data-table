@@ -1,4 +1,8 @@
 import * as React from 'react';
+import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setIsOpenNew } from '../../redux/Reducher/isOpenNewCompany';
+
 import { Button } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import ViewColumnIcon from '@mui/icons-material/ViewColumn';
@@ -8,7 +12,6 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
@@ -20,6 +23,14 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 export default function DataTableHeader() {
+  const [isOpenNew, setIsOpenNewLocal] = useState(false); // set initial value to false
+
+  const dispatch = useDispatch();
+  const handleOpenNew = () => {
+    dispatch(setIsOpenNew(true));
+    setIsOpenNewLocal(true);
+  };
+
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
@@ -173,7 +184,11 @@ export default function DataTableHeader() {
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Button startIcon={<AddIcon />} variant="contained">
+              <Button
+                onClick={handleOpenNew}
+                startIcon={<AddIcon />}
+                variant="contained"
+              >
                 Add
               </Button>
             </IconButton>

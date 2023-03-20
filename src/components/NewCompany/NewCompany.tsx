@@ -1,11 +1,15 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
+
 import Tab from '@mui/material/Tab';
 import { Typography } from '@mui/material';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import BasicInfo from './BasicInfo';
+import { useSelector, useDispatch } from 'react-redux';
+import { setIsOpenNew } from '../../redux/Reducher/isOpenNewCompany';
+
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import ContactPerson from './ContactPerson';
@@ -15,7 +19,10 @@ export default function NewCompany() {
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
-
+  const dispatch = useDispatch();
+  const handleOpenNew = () => {
+    dispatch(setIsOpenNew(false));
+  };
   return (
     <Box sx={{ width: '100%', typography: 'body1' }}>
       <Box className="flex my-5 px-5 justify-between">
@@ -23,7 +30,7 @@ export default function NewCompany() {
           New Company
         </Typography>
         <Stack spacing={2} direction="row">
-          <Button size="small" variant="outlined">
+          <Button onClick={handleOpenNew} size="small" variant="outlined">
             Cancel
           </Button>
           <Button size="small" color="success" variant="contained">

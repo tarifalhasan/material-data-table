@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PrimarySearchAppBar from './components/Header/Header';
 import SIdebar from './components/Sidebar/Sidebar';
-
+import { RootState } from './types';
 import DataTable from './components/dataTable/DataTable';
 import NewCompany from './components/NewCompany/NewCompany';
 import Footer from './components/Footer/Footer';
 
 const App = () => {
-  const isOpenNew = useSelector(state => state.isOpenNew.isOpenNew);
+  const isOpenNew = useSelector(
+    (state: RootState) => state.isOpenNew.isOpenNew
+  );
 
   return (
     <>
